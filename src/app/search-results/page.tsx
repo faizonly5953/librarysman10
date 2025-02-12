@@ -1,15 +1,12 @@
-"use client";
+'use client';
 
 import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import SearchResultsComponent from "./SearchResultsComponent";
 
-const SearchResults = () => {
+export default function SearchResults() {
   return (
-    <Suspense fallback={<p>Loading search results...</p>}>
+    <Suspense fallback={<div>Loading...</div>}>
       <SearchResultsComponent />
     </Suspense>
   );
-};
-
-export default SearchResults;
+}
