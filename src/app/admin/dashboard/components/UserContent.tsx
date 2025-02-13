@@ -143,7 +143,7 @@ const BorrowedBooks = () => {
       <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-800 text-center md:text-left">
         Daftar Peminjaman Buku
       </h2>
-      <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-[156vh]">
+      <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-[152vh]">
         <div className="max-h-[650px] overflow-x-auto rounded-lg">
           <div className="overflow-x-auto sm:overflow-visible">
             <table className="w-full border-collapse table-auto min-w-[1200px] hidden sm:table">

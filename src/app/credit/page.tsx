@@ -96,7 +96,6 @@ const CreditsPage = () => {
                 "Create wireframes and UI/UX design",
               ]}
             />
-
             {/* Phase 2: Frontend Development */}
             <ProjectPhase 
               phase="Phase 2" 

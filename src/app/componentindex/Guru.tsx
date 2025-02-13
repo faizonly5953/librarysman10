@@ -27,33 +27,57 @@ const Guru = () => {
   ];
 
   return (
-    <section id='guru' className="w-full mx-auto p-6 bg-background min-h-screen">
-    <TranslatableHeader value="Meet Our Teachers" translate="Kenali Guru" className="text-black text-center w-full font-serif text-5xl mt-20 mb-10"/>
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="flex flex-col p-6 border rounded-3xl shadow-lg w-full max-w-6xl bg-bgnavbarhover transition-all duration-300">
-        {/* Header untuk Guru */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {teachers.map((teacher) => (
-            <div key={teacher.id} className="flex flex-col items-center text-center w-[30%]">
-              <div className="md:w-[50vh] md:h-[50vh] w-[30vh] h-[30vh] rounded-full overflow-hidden border-white border-8 hover:border-[1vw] transition-all duration:300 mb-4">
-                <Image
-                  src={teacher.image}
-                  alt={teacher.name}
-                  width={400}
-                  height={150}
-                  className="object-cover"
-                />
+    <section id="guru" className="w-full bg-slate-50 min-h-screen py-16 px-4">
+      <TranslatableHeader
+        value="Meet Our Teachers"
+        translate="Kenali Guru"
+        className="text-gray-800 text-center font-serif text-4xl md:text-5xl mb-16"
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-bgnavbar rounded-3xl p-8 md:p-12 shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {teachers.map((teacher) => (
+              <div
+                key={teacher.id}
+                className="flex flex-col items-center transform transition-all duration-300"
+              >
+                <div className="relative w-48 h-48 md:w-64 md:h-64 mb-6">
+                  <div className="absolute inset-0 bg-white rounded-full p-3 transform transition-all duration-300 hover:scale-105 hover:border-8 hover:border-orange-200">
+                    <div className="relative w-full h-full rounded-full overflow-hidden">
+                      <Image
+                        src={teacher.image}
+                        alt={teacher.name}
+                        layout="fill"
+                        objectFit="cover"
+                        className="transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-gray-700 text-xl md:text-2xl font-semibold mb-2">
+                  {teacher.name}
+                </h3>
+                <p className="text-gray-700 text-lg mb-2">{teacher.subject}</p>
+                <p className="text-black text-center text-sm">
+                  {teacher.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold text-white">{teacher.name}</h3>
+            ))}
+          </div>
+            <div className="mt-12 bg-white bg-opacity-95 rounded-2xl p-6 md:p-8 max-h-64 overflow-y-auto">
+            <p className="text-gray-700 text-center text-base md:text-lg leading-relaxed">
+              Guru adalah seseorang yang bertugas mendidik, mengajar, membimbing, dan menginspirasi 
+              siswa dalam proses belajar. Selain memberikan pengetahuan akademis, seorang guru juga 
+              berperan dalam membentuk karakter dan nilai-nilai moral siswa, membantu mereka berkembang 
+              menjadi individu yang kompeten dan berintegritas. Guru sering dianggap sebagai panutan, 
+              yang tidak hanya berbagi ilmu tetapi juga memberikan motivasi dan dukungan untuk mencapai 
+              potensi terbaik muridnya.
+            </p>
             </div>
-          ))}
-        </div>
-        <div className=''>
-        <h1 className='text-black text-center mt-10 w-full pl-8 pr-8 bg-bgnavbar rounded-2xl p-7'>Guru adalah seseorang yang bertugas mendidik, mengajar, membimbing, dan menginspirasi siswa dalam proses belajar. Selain memberikan pengetahuan akademis, seorang guru juga berperan dalam membentuk karakter dan nilai-nilai moral siswa, membantu mereka berkembang menjadi individu yang kompeten dan berintegritas. Guru sering dianggap sebagai panutan, yang tidak hanya berbagi ilmu tetapi juga memberikan motivasi dan dukungan untuk mencapai potensi terbaik muridnya.</h1>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 

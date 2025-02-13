@@ -48,6 +48,7 @@ const LibraryCatalog = () => {
     const router = useRouter();
     
     return (
+      <div className='mx-4'>
       <div className="flex flex-col border-2 hover:border-orange-100 md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200">
         {/* Cover Image */}
         <div className="relative w-full md:w-48">
@@ -100,6 +101,7 @@ const LibraryCatalog = () => {
       </div>
         </div>
       </div>
+      </div>
     );
   };
 
@@ -132,7 +134,7 @@ const LibraryCatalog = () => {
         {/* Featured Books */}
         <section className="mb-6">
           <h2 className="text-lg font-semibold mb-3 md:pl-6 pl-6 text-gray-800">Buku Pilihan</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-5 mdmx-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mdmx-0">
             {featuredBooks.slice(0, 4).map((book) => (
               <BookCard key={book.id} book={book} />
             ))}
@@ -140,7 +142,7 @@ const LibraryCatalog = () => {
         </section>
 
         {/* Genre Filter - More compact */}
-        <section className="mt-14">
+        <section className="mt-14 mx-5">
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-lg font-semibold text-gray-800">Koleksi Buku</h2>
         <button

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { db } from '@/app/componentmain/FirebaseConfig';
 import { Book } from '@/app/componentmain/book';
-import { Pencil, Eraser } from 'lucide-react';
+import { Settings, Trash2 } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 interface BookActionsProps {
@@ -97,9 +97,9 @@ const BookActions: React.FC<BookActionsProps> = ({ book, onUpdate }) => {
     <div>
       <div className='flex'>
       <div className='mr-4'>
-      <button onClick={() => setIsEditing(true)} className="px-4 py-2 text-zinc-950 text-sm border rounded hover:bg-blue-400 bg-blue-300"><Pencil size={20} /></button>
+      <button onClick={() => setIsEditing(true)} className="px-4 py-2 text-zinc-950 text-sm border rounded hover:bg-blue-400 bg-blue-300"><Settings size={20} /></button>
       </div>
-      <button onClick={handleDelete} className="px-4 py-2 text-sm text-white bg-red-500 rounded hover:bg-red-600"><Eraser size={20}/></button>
+      <button onClick={handleDelete} className="px-4 py-2 text-sm text-white bg-red-500 rounded hover:bg-red-600"><Trash2 size={20}/></button>
       </div>
       {isEditing && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">

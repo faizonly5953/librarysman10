@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Home, Users, Menu, X, BookOpen } from 'lucide-react';
+import { Home, Users, Menu, X, BookOpen, User, LogOut } from 'lucide-react';
 import { HomeContent } from './components/HomeContent';
 import BorrowedBooks from './components/UserContent';
 import { BookContent } from './components/CatalogComponent';
@@ -56,13 +56,18 @@ const SidebarLayout = () => {
   };
 
   return (
-    <div className="flex h-max bg-gray-100">
+    <div className="flex h-max bg-gray-400">
       <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 z-20 transition duration-200 ease-in-out`}>
-        <div className="flex flex-col h-full w-64 bg-gray-800">
-          <div className="flex items-center justify-between h-16 px-4 bg-gray-900 text-white">
-            <div className="flex flex-col">
+        <div className="flex flex-col h-full md:w-72 w-[35vh] bg-gray-800">
+          <div className="flex items-center justify-between h-24 px-4 bg-gray-900 text-white">
+              <div className="flex items-center space-x-5">
+                <div className='bg-gray-800 p-3 rounded-full flex items-center justify-center'>
+                  <User size={32} />
+                </div>
+              <div className="flex flex-col">
               <span className="text-xl font-semibold">Dashboard</span>
               <span className="text-sm text-gray-300">Welcome, {user.email}</span>
+            </div>
             </div>
             <button onClick={() => setSidebarOpen(!isSidebarOpen)} className="lg:hidden">
               <X size={24} />
@@ -81,10 +86,13 @@ const SidebarLayout = () => {
               <BookOpen size={20} />
               <span>Catalog</span>
             </button>
-            <button onClick={handleSignOut} className="w-full max-w-xs mx-auto mt-8 px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors">
+          </nav>
+          <div className='m-3 text-start'>
+          <button onClick={handleSignOut} className="flex gap-4 w-full max-w-xs mx-auto mt-8 px-3 py-2 text-white rounded-md hover:bg-gray-700 transition-colors">
+            <LogOut />
               Sign Out
             </button>
-          </nav>
+            </div>
         </div>
       </div>
       <div className="flex-1">

@@ -20,10 +20,15 @@ const FloatingButton = () => {
   const onScanSuccess = async (decodedText: string) => {
     console.log(`Code matched = ${decodedText}`);
     stopQRScanner();
-
+  
     let parsedData;
     try {
       parsedData = JSON.parse(decodedText);
+  
+      // Validasi struktur JSON
+      if (!parsedData.book || !parsedData.borrower || !parsedData.date) {
+        throw new Error("Format JSON tidak valid! Harus berisi 'book', 'borrower', dan 'date'.");
+      }
     } catch (error) {
       console.error("Parsing JSON gagal:", error);
       Swal.fire({
@@ -33,12 +38,49 @@ const FloatingButton = () => {
       });
       return;
     }
-
+  
+    // Konversi tanggal dari string ke objek Date
+    const date = new Date(parsedData.date);
+    if (isNaN(date.getTime())) {
+      Swal.fire({
+        title: "Error",
+        text: "Format tanggal tidak valid!",
+        icon: "error",
+      });
+      return;
+    }
+  
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "long",  // Gunakan "long", "short", atau "narrow"
+      day: "numeric",    // Gunakan "numeric" atau "2-digit"
+      month: "long",     // Gunakan "numeric", "2-digit", "long", "short", atau "narrow"
+      year: "numeric",   // Gunakan "numeric" atau "2-digit"
+    };
+    
+    const formattedDate = date.toLocaleDateString('id-ID', options);
+  
+    // Konfirmasi sebelum menyimpan
+    const { isConfirmed } = await Swal.fire({
+      title: "Konfirmasi Data",
+      html: `
+        <p><b>Buku:</b> ${parsedData.book}</p>
+        <p><b>Peminjam:</b> ${parsedData.borrower}</p>
+        <p><b>Tanggal Pengembalian Buku:</b> ${formattedDate}</p>
+        <p>Apakah data ini sudah benar?</p>
+      `,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Ya, Simpan",
+      cancelButtonText: "Batal",
+    });
+  
+    if (!isConfirmed) return;
+  
     try {
       const borrowRef = collection(db, "borrow");
       const q = query(borrowRef, where("book", "==", parsedData.book), where("borrower", "==", parsedData.borrower));
       const querySnapshot = await getDocs(q);
-      
+  
       if (!querySnapshot.empty) {
         Swal.fire({
           title: "Gagal!",
@@ -47,14 +89,15 @@ const FloatingButton = () => {
         });
         return;
       }
-
+  
       await addDoc(borrowRef, {
         ...parsedData,
-        isReturned: false, 
-        ActionReturned: true, 
+        isReturned: false,
+        ActionReturned: true,
         scannedAt: serverTimestamp(),
       });
       console.log("Data berhasil disimpan ke Firestore");
+  
       Swal.fire({
         title: "Scan Berhasil!",
         text: "Data berhasil dikirim ke database.",
@@ -71,6 +114,7 @@ const FloatingButton = () => {
       });
     }
   };
+  
 
   const onScanError = (errorMessage: string) => {
     if (
