@@ -9,7 +9,7 @@ export default function Pinjam() {
                 </h1>
             <small>setelah mengetahui ini semua, pinjam sekarang juga broski</small>
             </div>
-        <Link href="#awal">
+        <Link href="/catalog">
             <button className="bg-bgbtn text-white px-6 py-3 rounded-lg hover:bg-bgbtn2 hover:scale-110 transition-transform duration-300">
                 Pinjam Sekarang
             </button>
