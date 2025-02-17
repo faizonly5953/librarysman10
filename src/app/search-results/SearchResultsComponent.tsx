@@ -124,7 +124,16 @@ const BookCard = ({ book }: { book: Book }) => {
         </div>
 
         <div className="mt-2">
-          <BookBorrow book={book} />
+          {book.availableCopies > 0 ? (
+            <BookBorrow book={book} />
+          ) : (
+            <button 
+              className="w-full px-4 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-md cursor-not-allowed"
+              disabled
+            >
+              Not Available
+            </button>
+          )}
         </div>
       </div>
     </div>

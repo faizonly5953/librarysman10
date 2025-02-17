@@ -56,7 +56,7 @@ const SidebarLayout = () => {
   };
 
   return (
-    <div className="flex h-max bg-gray-400">
+    <div className="flex h-max bg-gray-100">
       <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 z-20 transition duration-200 ease-in-out`}>
         <div className="flex flex-col h-full md:w-72 w-[35vh] bg-gray-800">
           <div className="flex items-center justify-between h-24 px-4 bg-gray-900 text-white">

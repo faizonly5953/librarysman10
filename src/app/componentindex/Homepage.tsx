@@ -15,9 +15,9 @@ export default function Home() {
           <p className="text-lg text-gray-600 mb-6">
             <span className="italic">"Kalau engkau hanya membaca buku yang dibaca semua orang, engkau hanya bisa berpikir sama seperti semua orang." (Haruki Murakami). </span>Welcome to our digital library that provides easy access to thousands of books from fiction to non-fiction along with educational resources; explore book categories, find your favorite reads, and contact us to enjoy a seamless reading experience in one platform!
           </p>
-          <Link href="/catalog">
+          <Link href="#awal">
             <button className="bg-bgbtn text-white px-6 py-3 rounded-lg hover:bg-bgbtn2 hover:scale-110 transition-transform duration-300">
-              Journey on!
+              Explore
             </button>
           </Link>
         </div>

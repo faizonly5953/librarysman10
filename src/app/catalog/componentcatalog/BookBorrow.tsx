@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Book } from "@/app/componentmain/book";
 import { Buffer } from "buffer";
+import Swal from "sweetalert2";
 
 const BookBorrow = ({ book }: { book: Book }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -57,7 +58,11 @@ const BookBorrow = ({ book }: { book: Book }) => {
       const encodedQr = Buffer.from(qrContent).toString("base64");
       router.push(`/borrow/${borrowId}#${encodedQr}`);
     } else {
-      alert("Mohon isi semua bidang yang diperlukan.");
+      Swal.fire({
+        icon: 'warning',
+        title: 'Peringatan',
+        text: 'Mohon isi semua bidang yang diperlukan.',
+      });
     }
   };
 
@@ -65,6 +70,12 @@ const BookBorrow = ({ book }: { book: Book }) => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     return tomorrow.toISOString().split("T")[0];
+  };
+
+  const getMaxDate = () => {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 15); // 2 weeks + 1 day from today
+    return maxDate.toISOString().split("T")[0];
   };
 
   return (
@@ -98,6 +109,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
                   onChange={handleInputChange}
                   className="w-2/3 p-2 border text-gray-700 rounded-lg"
                   min={name === "date" ? getTomorrowDate() : undefined}
+                  max={name === "date" ? getMaxDate() : undefined}
                 />
               </div>
             ))}

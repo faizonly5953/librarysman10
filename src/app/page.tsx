@@ -6,6 +6,7 @@ import Intro from './componentindex/Intro';
 import Carousel from './componentindex/Facility';
 import Guru from './componentindex/Guru';
 import Footer from './componentindex/End';
+import Pinjam from './componentindex/Borrow';
 export default function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Home() {
       <Intro />
       <Guru />
       <Carousel />
+      <Pinjam />
       <Footer />
     </div>
   );
