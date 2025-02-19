@@ -68,7 +68,7 @@ const LibraryCatalog = () => {
               <h3 className="font-semibold text-xl text-gray-800">{book.title}</h3>
               <p className="text-gray-600 text-sm">{book.author}</p>
             </div>
-            <span className={`inline-block px-2 py-1 rounded-full text-xs ${
+            <span className={`inline-block w-fit md:mt-0 mt-2 md:px-2 px-2 py-1 rounded-full text-sm ${
               book.availableCopies > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
             }`}>
               {book.availableCopies > 0 ? `${book.availableCopies} Tersedia` : "Dipinjam Semua"}

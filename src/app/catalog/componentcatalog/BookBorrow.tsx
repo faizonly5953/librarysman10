@@ -81,7 +81,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
   return (
     <>
       <button
-        className="md:w-[30vh] w-[95%] w-full mt-1 py-2 bg-bgnew text-white rounded-lg hover:bg-bgolive font-semibold md:mb-0 md:ml-0 mb-3 ml-2"
+        className="md:w-[30vh] w-[95%] w-full mt-1 py-2 bg-bgnew text-white rounded-lg hover:bg-bgolive font-semibold md:mb-0 md:ml-0 mb-3"
         onClick={() => setIsFormVisible(true)}
       >
         Pinjam Buku
