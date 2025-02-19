@@ -95,7 +95,7 @@ const Footer = () => {
       </div>
       <div className="mt-8 pb-5 pt-5 bg-bgfooter text-center text-white text-base">
         © {new Date().getFullYear()}{' '}
-        <a href="/credit" target="_blank" className="text-green-400 hover:underline">
+        <a href="/credit" target="_blank" className="font-bold text-transparent bg-gradient-to-r from-green-400 via-green-500 to-green-400 bg-clip-text hover:animate-gradient hover:underline transition-allfont-bold text-transparent bg-gradient-to-r from-lime-300 via-emerald-300 to-teal-300 bg-clip-text hover:animate-gradient hover:underline hover:tracking-[0.7vh] transition-all">
           OPTION
         </a>. All rights reserved.
       </div>

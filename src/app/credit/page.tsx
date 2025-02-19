@@ -30,7 +30,10 @@ const CreditsPage = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="text-center">
-          <h1 className="text-5xl font-bold mb-4">Credits</h1>
+        <h1 className="text-5xl font-bold mb-4 text-transparent bg-gradient-to-r from-cyan-400 via-teal-400 to-lime-500 bg-clip-text animate-gradient">
+  Credits
+</h1>
+
           <p className="text-xl text-gray-300 mb-8">
             Meet the awesome duo behind this website
           </p>
