@@ -43,11 +43,11 @@ const Carousel = () => {
   };
 
   return (
-    <div id='tawaran' className="w-full px-4 py-8 bg-gray-50">
+    <div id='tawaran' className="w-full pt-10 pb-5 bg-gray-50">
       <TranslatableHeader 
-        value="What We Offer" 
-        translate="Apa Yang Kami Tawarkan" 
-        className="text-center text-black text-5xl mt-10 font-serif" 
+        value="Facility" 
+        translate="Fasilitas di perpustakaan kami" 
+        className="text-center text-black text-5xl" 
       />
       <div className="container mx-auto relative">
         <Swiper
@@ -83,7 +83,7 @@ const Carousel = () => {
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-4 hover:shadow-xl">
-                <div className="bg-bgnavbarhover h-96 flex flex-col justify-center items-center relative">
+                <div className="bg-bgphotoblue h-96 flex flex-col justify-center items-center relative">
                   {slide.image ? (
                     <img 
                       src={typeof slide.image === 'string' ? slide.image : undefined} 
@@ -104,8 +104,8 @@ const Carousel = () => {
                     />
                   </label>
                 </div>
-                <div className="p-6 text-center bg-orange-200">
-                  <p className="text-black">Additional content for slide {slide.id}</p>
+                <div className="p-6 text-center bg-bgphotodark">
+                  <p className="text-white">Additional content for slide {slide.id}</p>
                 </div>
               </div>
             </SwiperSlide>

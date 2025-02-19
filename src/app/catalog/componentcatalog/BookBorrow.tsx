@@ -81,16 +81,16 @@ const BookBorrow = ({ book }: { book: Book }) => {
   return (
     <>
       <button
-        className="w-full mt-2 py-2 bg-[#e6c69c] text-white rounded-lg hover:bg-[#d4b589] font-semibold"
+        className="md:w-[30vh] w-[95%] w-full mt-1 py-2 bg-bgnew text-white rounded-lg hover:bg-bgolive font-semibold md:mb-0 md:ml-0 mb-3 ml-2"
         onClick={() => setIsFormVisible(true)}
       >
         Pinjam Buku
       </button>
-
+    
       {isFormVisible && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg max-w-md w-full relative">
-            <h2 className="text-xl font-bold text-[#afab90]">{book.title}</h2>
+          <div className="bg-white p-6 rounded-lg max-w-md w-full relative m-3">
+            <h2 className="text-xl font-bold text-black">{book.title}</h2>
             <p className="text-gray-700">Penulis: {book.author}</p>
             <p className="text-sm text-gray-500">Lokasi: {book.location}</p>
 
@@ -148,7 +148,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
               </>
             )}
 
-            <button className="w-full mt-4 py-2 bg-[#e6c69c] text-white rounded-lg hover:bg-[#d4b589] font-semibold" onClick={handleConfirmBorrow}>
+            <button className="w-full mt-4 py-2 hover:bg-bgolive text-white rounded-lg bg-bgphotoblue hover:bgplatinum font-semibold" onClick={handleConfirmBorrow}>
               Lanjutkan
             </button>
             <button className="w-full mt-2 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400" onClick={() => setIsFormVisible(false)}>

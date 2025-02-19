@@ -28,7 +28,7 @@ export default function Ajakan() {
             </h1>
           </div>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed md:w-full w-[38vh]">
-            Jadi, tunggu apa lagi? Ribuan buku menarik sudah menanti untuk
+            Ribuan buku menarik sudah menanti untuk
             dijelajahi! Jangan biarkan kesempatan berlalu begitu saja—dapatkan
             akses instan ke koleksi terbaik dan mulai petualangan membaca tanpa
             batas. Segera pinjam, baca, dan temukan dunia baru dalam setiap

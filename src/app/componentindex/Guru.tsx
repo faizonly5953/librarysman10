@@ -27,15 +27,15 @@ const Guru = () => {
   ];
 
   return (
-    <section id="guru" className="w-full bg-slate-50 min-h-screen py-16 px-4">
+    <section id="guru" className="w-full bg-slate-50 min-h-screen md:py-16 py-10 px-4">
       <TranslatableHeader
         value="Meet Our Teachers"
         translate="Kenali Guru"
-        className="text-gray-800 text-center font-serif text-4xl md:text-5xl mb-16"
+        className="text-gray-800 text-center text-4xl md:text-5xl mb-16"
       />
       
       <div className="max-w-7xl mx-auto">
-        <div className="bg-bgnavbar rounded-3xl p-8 md:p-12 shadow-xl">
+        <div className="bg-bgphotoblue rounded-3xl p-8 md:p-12 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {teachers.map((teacher) => (
               <div
@@ -43,7 +43,7 @@ const Guru = () => {
                 className="flex flex-col items-center transform transition-all duration-300"
               >
                 <div className="relative w-48 h-48 md:w-64 md:h-64 mb-6">
-                  <div className="absolute inset-0 bg-white rounded-full p-3 transform transition-all duration-300 hover:scale-105 hover:border-8 hover:border-orange-200">
+                  <div className="absolute inset-0 bg-white rounded-full p-3 transform transition-all duration-300 hover:scale-105 hover:border-8 hover:border-bgolive">
                     <div className="relative w-full h-full rounded-full overflow-hidden">
                       <Image
                         src={teacher.image}
@@ -55,7 +55,7 @@ const Guru = () => {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-gray-700 text-xl md:text-2xl font-semibold mb-2">
+                <h3 className="text-white text-xl md:text-2xl font-semibold mb-2">
                   {teacher.name}
                 </h3>
                 <p className="text-gray-700 text-lg mb-2">{teacher.subject}</p>
@@ -65,7 +65,7 @@ const Guru = () => {
               </div>
             ))}
           </div>
-            <div className="mt-12 bg-white bg-opacity-95 rounded-2xl p-6 md:p-8 max-h-64 overflow-y-auto">
+            <div className="mt-12 bg-bgplatinum bg-opacity-95 rounded-2xl p-6 md:p-8 max-h-64 overflow-y-auto">
             <p className="text-gray-700 text-center text-base md:text-lg leading-relaxed">
               Guru adalah seseorang yang bertugas mendidik, mengajar, membimbing, dan menginspirasi 
               siswa dalam proses belajar. Selain memberikan pengetahuan akademis, seorang guru juga 

@@ -20,7 +20,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search by title, author, or genre..."
-        className="w-full pl-12 pr-4 py-3 rounded-2xl text-neutral-800 bg-white shadow-md focus:outline-none focus:ring-2 focus:ring-[#e6c69c] transition-all duration-200"
+        className="w-full pl-12 pr-4 py-3 rounded-2xl text-neutral-800 bg-white shadow-md focus:outline-none focus:ring-4 focus:ring-bgolive transition-all duration-200"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleSearch}
