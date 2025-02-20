@@ -34,7 +34,7 @@ export default function Manfaat() {
 
   return (
     <div className="w-full py-16 px-4 md:px-10 bg-gray-50">
-      <div className="h-full md:pb-0 pb-10 pt-10 bg-bgphotoblue flex flex-col gap-10 md:gap-1 px-6 md:px-14 rounded-3xl shadow-xl max-w-6xl mx-auto">
+      <div className="h-full cursor-default md:pb-0 pb-10 pt-10 bg-bgphotoblue flex flex-col gap-10 md:gap-1 px-6 md:px-14 rounded-3xl shadow-xl max-w-6xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl mb-3 md:mb-2 font-bold text-white relative inline-block">
             Apa Manfaatnya?

@@ -2,7 +2,7 @@ import TranslatableHeader from "./TranslatableHeader";
 
 export default function Intro() {
     return (
-      <div id="awal" className="min-h-screen md:pt-28 pt-10 pb-12 bg-slate-50 flex flex-col items-center justify-center">
+      <div id="awal" className="cursor-default min-h-screen md:pt-28 pt-10 pb-12 bg-slate-50 flex flex-col items-center justify-center">
         {/* Pembuka */}
         <TranslatableHeader value="Begin The Journey" translate="Perjalanan Dimulai" className="z-40 text-black mb-16 text-3xl md:text-5xl hover:tracking-widest uppercase underline underline-offset-[20px]"/>
 

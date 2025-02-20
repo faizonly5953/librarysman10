@@ -27,7 +27,7 @@ const Guru = () => {
   ];
 
   return (
-    <section id="guru" className="w-full bg-slate-50 min-h-screen md:py-16 py-10 px-4">
+    <section id="guru" className="w-full bg-slate-50 min-h-screen md:py-16 py-10 px-4 cursor-default">
       <TranslatableHeader
         value="Meet Our Teachers"
         translate="Kenali Guru"

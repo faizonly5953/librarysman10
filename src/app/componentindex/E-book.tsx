@@ -23,7 +23,7 @@ export default function Ebook() {
   return (
     <div id="ebook-section" className="w-full md:py-16 py-2 px-4 md:px-10">
       <div 
-        className={`min-h-[60vh] bg-bgnew flex flex-col md:flex-row gap-8 md:gap-16 p-6 md:p-14 rounded-3xl shadow-xl transition-all duration-1000 "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        className={`min-h-[60vh] cursor-default bg-bgnew flex flex-col md:flex-row gap-8 md:gap-16 p-6 md:p-14 rounded-3xl shadow-xl transition-all duration-1000 "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <div className="md:w-1/2 flex items-center justify-center relative order-2 md:order-1">

@@ -22,7 +22,7 @@ export default function Ajakan() {
       >
         <div className="flex flex-col items-center text-center gap-8">
           <div className="pb-5">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 relative group transition-all hover:tracking-widest hover:text-sky-400">
+            <h1 className="text-3xl cursor-default md:text-4xl font-bold text-gray-800 relative group transition-all hover:tracking-widest hover:text-sky-400">
               Tunggu Apa Lagi?
               <span className="absolute -bottom-5 left-0 w-full h-1 bg-blue-500 transform scale-x-50 mx-auto transition-transform duration-300 group-hover:scale-x-100"></span>
             </h1>

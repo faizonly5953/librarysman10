@@ -49,7 +49,7 @@ const LibraryCatalog = () => {
     
     return (
       <div className='mx-4'>
-      <div className="flex flex-col border-2 hover:border-gray-300 md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200">
+      <div className="w-full flex border-2 hover:border-gray-300 md:flex-row bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200">
         {/* Cover Image */}
         <div className="relative w-full md:w-48 md:m-1 m-0">
           <div className="pt-[110%] md:pt-[160%]">

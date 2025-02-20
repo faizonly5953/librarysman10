@@ -97,10 +97,10 @@ const BookBorrow = ({ book }: { book: Book }) => {
             {[ 
               { label: "Nama", name: "name", type: "text" },
               { label: "Nomor Telepon", name: "phone", type: "tel" },
-              { label: "Tanggal Pengembalian", name: "date", type: "date" },
+              { label: "Tanggal dikembalikan", name: "date", type: "date" },
             ].map(({ label, name, type }) => (
               <div key={name} className="flex items-center mt-2">
-                <label className="w-1/3 text-gray-700">{label}</label>
+                <label className="md:w-[20vh] w-[15vh] text-gray-700">{label}</label>
                 <input
                   type={type}
                   name={name}
@@ -115,7 +115,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
             ))}
 
             <div className="flex items-center mt-2">
-              <label className="w-1/3 text-gray-700">Peran</label>
+              <label className="md:w-[20vh] w-[15vh] text-gray-700">Peran</label>
               <select name="role" value={borrowerInfo.role} onChange={handleInputChange} className="w-2/3 p-2 text-gray-700 border rounded-lg">
                 <option value="" disabled>Pilih Peran</option>
                 <option value="Siswa">Siswa</option>
@@ -126,7 +126,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
             {borrowerInfo.role === "Siswa" && (
               <>
                 <div className="flex items-center mt-2">
-                  <label className="w-1/3 text-gray-700">Kelas</label>
+                  <label className="md:w-[20vh] w-[15vh] text-gray-700">Kelas</label>
                   <select name="class" value={borrowerInfo.class} onChange={handleInputChange} className="w-2/3 p-2 border rounded-lg">
                     <option className="text-gray-700" value="" disabled>Pilih Kelas</option>
                     {Object.keys(classOptions).map(cls => (
@@ -136,7 +136,7 @@ const BookBorrow = ({ book }: { book: Book }) => {
                 </div>
                 {borrowerInfo.class && (
                   <div className="flex items-center mt-2">
-                    <label className="w-1/3 text-gray-700">Subkelas</label>
+                    <label className="md:w-[20vh] w-[15vh] text-gray-700">Subkelas</label>
                     <select name="subclass" value={borrowerInfo.subclass} onChange={handleInputChange} className="w-2/3 p-2 text-gray-700 border rounded-lg">
                       <option className="text-gray-700" value="" disabled>Pilih Subkelas</option>
                       {classOptions[borrowerInfo.class as keyof typeof classOptions].map(sub => (

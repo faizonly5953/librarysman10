@@ -22,7 +22,7 @@ export default function Pinjam() {
   return (
     <div id="pinjam-section" className="w-full md:py-16 py-8 px-4 md:px-10">
       <div
-        className={`min-h-[70vh] pt-5 pb-5 flex flex-col md:flex-row gap-8 md:gap-2 px-6 md:px-14 bg-bgnew rounded-3xl shadow-xl transition-all duration-1000 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`min-h-[70vh] cursor-default pt-5 pb-5 flex flex-col md:flex-row gap-8 md:gap-2 px-6 md:px-14 bg-bgnew rounded-3xl shadow-xl transition-all duration-1000 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         <div className="flex flex-col justify-center md:mb-0 md:w-1/2">
           <h1 className="text-3xl md:text-4xl mb-3 md:mb-5 md:m-0 m-1 mb-8 font-bold text-gray-800 relative inline-block text-white">

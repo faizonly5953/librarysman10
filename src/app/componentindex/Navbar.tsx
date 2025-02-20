@@ -6,7 +6,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
 
   const navItems = [
-    { name: "Home", link: "#utama" },
+    { name: "Home", link: "/" },
     { name: "Tentang", link: "#awal" },
     { name: "Pengelola", link: "#guru" },
     { name: "Fasilitas", link: "#tawaran" },
