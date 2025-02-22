@@ -3,13 +3,12 @@ import { Minimize } from 'lucide-react';
 
 export default function ImagePopupCard() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     if (selectedImage) {
-      // Just prevent scrolling when modal is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Re-enable scrolling without changing position
       document.body.style.overflow = 'unset';
     }
 
@@ -17,6 +16,14 @@ export default function ImagePopupCard() {
       document.body.style.overflow = 'unset';
     };
   }, [selectedImage]);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectedImage(null);
+      setIsClosing(false);
+    }, 300);
+  };
 
   const images = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEAFhHlcmkQt4OH_auu8MmhRyUqWKd-CFZTg&s",
@@ -34,33 +41,40 @@ export default function ImagePopupCard() {
       {images.map((image, index) => (
         <div
           key={index}
-          className="p-4 shadow-lg rounded-xl hover:scale-105 transition-transform cursor-pointer bg-white"
+          className="group p-4 shadow-lg rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer bg-white hover:shadow-2xl"
           onClick={() => setSelectedImage(image)}
         >
           <div className="flex justify-center items-center rounded-lg overflow-hidden">
-            <img className="w-full h-72 object-cover rounded-lg" src={image} alt={`Card ${index + 1}`} />
+            <img 
+              className="w-full h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" 
+              src={image} 
+              alt={`Card ${index + 1}`} 
+            />
           </div>
         </div>
       ))}
 
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/75 flex items-center justify-center z-[9999]"
-          onClick={() => setSelectedImage(null)}
+          className={`fixed inset-0 z-[9999] flex items-center justify-center ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
+          onClick={handleClose}
         >
+          <div className={`absolute inset-0 bg-black/75 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`} />
+
           <div 
-            className="relative max-w-[90vw] max-h-[90vh] bg-white rounded-xl shadow-2xl"
+            className={`relative max-w-[90vw] max-h-[90vh] bg-white rounded-xl shadow-2xl ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'} transform transition-all duration-300`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-200 transition-colors text-sm py-2 px-4 rounded-lg"
+              onClick={handleClose}
+              className={`absolute -top-12 right-0 text-white hover:text-gray-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10 backdrop-blur-sm`}
             >
-              <Minimize />
+              <Minimize className="w-6 h-6" />
             </button>
-            <div className="p-2">
+
+            <div className="p-4">
               <img 
-                className="w-full max-w-[800px] max-h-[80vh] object-contain rounded-lg"
+                className="w-full max-w-[800px] max-h-[80vh] object-contain rounded-lg shadow-lg transition-transform duration-300"
                 src={selectedImage} 
                 alt="Popup" 
               />
@@ -68,6 +82,56 @@ export default function ImagePopupCard() {
           </div>
         </div>
       )}
+
+      <style jsx global>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+
+        @keyframes scaleIn {
+          from { 
+            transform: scale(0.95);
+            opacity: 0;
+          }
+          to { 
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes scaleOut {
+          from { 
+            transform: scale(1);
+            opacity: 1;
+          }
+          to { 
+            transform: scale(0.95);
+            opacity: 0;
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        .animate-fadeOut {
+          animation: fadeOut 0.3s ease-out forwards;
+        }
+
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out forwards;
+        }
+
+        .animate-scaleOut {
+          animation: scaleOut 0.3s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }
