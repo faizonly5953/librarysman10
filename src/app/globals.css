@@ -6,7 +6,7 @@
   --nav-font: 5px;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -17,15 +17,15 @@ body {
 .swiper-wrapper {
   height: max-content !important;
   padding-bottom: 64px !important;
-  padding-top:  64px !important;
+  padding-top: 64px !important;
   -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
   position: relative;
-  }
-  .swiper-pagination-bullet {
+}
+.swiper-pagination-bullet {
   background: #4f46e5;
-  }
-  @layer base {
+}
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -80,18 +80,44 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-  @layer base {
+@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #c2c2c2;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #505050;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+  }
 }
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @layer utilities {
