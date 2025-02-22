@@ -211,19 +211,27 @@ const CreditsPage = () => {
             <h3 className="text-2xl font-bold mb-6">Special Thanks</h3>
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
+                <a href="https://chatgpt.com/" target="_blank">
                 <ExternalLink className="w-5 h-5 text-blue-400" />
+                </a>
                 <span>OpenAI - for Base Structure & Logic</span>
               </li>
               <li className="flex items-center gap-2">
+                <a href="https://claude.ai/" target="_blank">
                 <ExternalLink className="w-5 h-5 text-blue-400" />
+                </a>
                 <span>Claude Ai - for Base Design</span>
               </li>
               <li className="flex items-center gap-2">
+                <a href="https://firebase.google.com/docs/firestore?hl=id" target="_blank">
                 <ExternalLink className="w-5 h-5 text-blue-400" />
+                </a>
                 <span>Firestore - for database</span>
               </li>
               <li className="flex items-center gap-2">
+                <a href="https://vercel.com/" target="_blank">
                 <ExternalLink className="w-5 h-5 text-blue-400" />
+                </a>
                 <span>Vercel - for Hosting</span>
               </li>
             </ul>
