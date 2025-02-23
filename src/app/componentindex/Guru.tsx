@@ -65,7 +65,7 @@ const Guru = () => {
               </div>
             ))}
           </div>
-            <div className="mt-12 bg-bgplatinum bg-opacity-95 rounded-2xl p-6 md:p-8 max-h-64 overflow-y-auto">
+            <div className="mt-12 bg-bgplatinum bg-opacity-95 md:rounded-2xl rounded-lg p-6 md:p-8 max-h-64 overflow-y-auto custom-scrollbar">
             <p className="text-gray-700 text-center text-base md:text-lg leading-relaxed">
               Guru adalah seseorang yang bertugas mendidik, mengajar, membimbing, dan menginspirasi 
               siswa dalam proses belajar. Selain memberikan pengetahuan akademis, seorang guru juga 

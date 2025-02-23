@@ -10,6 +10,23 @@ html {
   scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+  width: 4px; /* Adjust scrollbar width */
+}
+
+html::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
