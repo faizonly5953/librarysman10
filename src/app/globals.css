@@ -85,28 +85,11 @@ body {
     @apply border-border;
   }
 
+
   body {
     @apply bg-background text-foreground;
   }
-  /* width */
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #c2c2c2;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #505050;
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #000000;
-  }
+ 
 }
 @keyframes gradientMove {
   0% {

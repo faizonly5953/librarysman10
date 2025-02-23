@@ -45,10 +45,10 @@ export default function ImagePopupCard() {
           onClick={() => setSelectedImage(image)}
         >
           <div className="flex justify-center items-center rounded-lg overflow-hidden">
-            <img 
-              className="w-full h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" 
-              src={image.src} 
-              alt={`Card ${index + 1}`} 
+            <img
+              className="w-full h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              src={image.src}
+              alt={`Card ${index + 1}`}
             />
           </div>
           <div>
@@ -65,7 +65,7 @@ export default function ImagePopupCard() {
         >
           <div className={`absolute inset-0 bg-black/75 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`} />
 
-          <div 
+          <div
             className={`relative max-w-[90vw] max-h-[90vh] bg-white rounded-xl shadow-2xl ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'} transform transition-all duration-300`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -77,16 +77,15 @@ export default function ImagePopupCard() {
             </button>
 
             <div className="p-4">
-              <img 
+              <img
                 className="w-full max-w-[800px] max-h-[80vh] object-contain rounded-lg shadow-lg transition-transform duration-300"
-                src={selectedImage.src} 
-                alt="Popup" 
+                src={selectedImage.src}
+                alt="Popup"
               />
             </div>
           </div>
         </div>
       )}
-
 
       <style jsx global>{`
         @keyframes fadeIn {
