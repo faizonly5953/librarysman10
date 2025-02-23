@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Minimize } from 'lucide-react';
 
 export default function ImagePopupCard() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; description: string } | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
@@ -26,14 +26,14 @@ export default function ImagePopupCard() {
   };
 
   const images = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEAFhHlcmkQt4OH_auu8MmhRyUqWKd-CFZTg&s",
-    "https://m.media-amazon.com/images/I/51zMCUgkP5L._UXNaN_FMjpg_QL85_.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqs0-HASbiDZr-JZzahqeCc6ijTqeYQCN2pQ&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYCu4P3jPTnKrFbATY0HXGazLytrFLdZxHQw&s",
-    "https://via.placeholder.com/300?text=Image+5",
-    "https://via.placeholder.com/300?text=Image+6",
-    "https://via.placeholder.com/300?text=Image+7",
-    "https://via.placeholder.com/300?text=Image+8",
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEAFhHlcmkQt4OH_auu8MmhRyUqWKd-CFZTg&s", description: "A beautiful landscape view." },
+    { src: "https://m.media-amazon.com/images/I/51zMCUgkP5L._UXNaN_FMjpg_QL85_.jpg", description: "A stylish black jacket." },
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqs0-HASbiDZr-JZzahqeCc6ijTqeYQCN2pQ&s", description: "A scenic mountain range." },
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYCu4P3jPTnKrFbATY0HXGazLytrFLdZxHQw&s", description: "An artistic painting of a sunset." },
+    { src: "https://via.placeholder.com/300?text=Image+5", description: "A placeholder image with text." },
+    { src: "https://via.placeholder.com/300?text=Image+6", description: "Another placeholder image." },
+    { src: "https://via.placeholder.com/300?text=Image+7", description: "Yet another placeholder image." },
+    { src: "https://via.placeholder.com/300?text=Image+8", description: "Final placeholder image." },
   ];
 
   return (
@@ -47,9 +47,13 @@ export default function ImagePopupCard() {
           <div className="flex justify-center items-center rounded-lg overflow-hidden">
             <img 
               className="w-full h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" 
-              src={image} 
+              src={image.src} 
               alt={`Card ${index + 1}`} 
             />
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold mt-3">Card {index + 1}</h2>
+            <p className="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
       ))}
@@ -75,13 +79,14 @@ export default function ImagePopupCard() {
             <div className="p-4">
               <img 
                 className="w-full max-w-[800px] max-h-[80vh] object-contain rounded-lg shadow-lg transition-transform duration-300"
-                src={selectedImage} 
+                src={selectedImage.src} 
                 alt="Popup" 
               />
             </div>
           </div>
         </div>
       )}
+
 
       <style jsx global>{`
         @keyframes fadeIn {
