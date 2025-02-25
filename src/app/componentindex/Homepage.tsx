@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div
       id="utama"
-      className="min-h-screen bg-background pt-[64px] md:ml-10 flex flex-row items-center justify-center gap-6"
+      className="min-h-screen bg-background md:pt-[64px] pt-[50px] md:ml-10 flex flex-row items-center justify-center gap-6"
     >
       {/* Hero Section */}
       <section className="container mx-auto px-10 md:py-10 py-20 flex flex-col-reverse md:flex-row items-center">
